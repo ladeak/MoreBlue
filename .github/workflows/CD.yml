@@ -6,22 +6,31 @@ on:
 
 jobs:
   build-and-deploy:
+    env:
+      VsixManifestPath: src\source.extension.vsixmanifest
+      VsixManifestSourcePath: src\source.extension.cs
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
+    - name: Setup Build
       uses: timheuer/bootstrap-dotnet@v1
       with:
         nuget: 'false'
         sdk: 'false'
         msbuild: 'true'
+    - name: Increment VSIX version
+      id: vsix_version
+      uses: timheuer/vsix-version-stamp@v2
+      with:
+        manifest-file: ${{ env.VsixManifestPath }}
+        vsix-token-source-file: ${{ env.VsixManifestSourcePath }}
     - name: Build
       run: msbuild -restore /p:Configuration=Release /p:OutputPath=app
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
           files: |
-            src\app\MoreBlue.vsix
+            src/app/MoreBlue.vsix
 
 
 
