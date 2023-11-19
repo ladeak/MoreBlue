@@ -4,6 +4,7 @@
         <Identity Id="MoreBlue.8EDBCACB-D615-4A6B-9317-C478567D0DB4" Version="1.0.0" Language="en-US" Publisher="ladeak" />
         <DisplayName>More Blue Theme</DisplayName>
         <Description xml:space="preserve">A more blue theme for VS</Description>
+        <License>Resources\LICENSE.txt</License>
         <Icon>Resources\icon.jpg</Icon>
         <Tags>theme</Tags>
         <Preview>true</Preview>
