@@ -1,0 +1,28 @@
+name: Build
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: timheuer/bootstrap-dotnet@v1
+      with:
+        nuget: 'false'
+        sdk: 'false'
+        msbuild: 'true'
+    - name: Build
+      run: msbuild -restore /p:Configuration=Release /p:OutputPath=app
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+          files: |
+            src/app/MoreBlue.vsix
+
+
+
+        
