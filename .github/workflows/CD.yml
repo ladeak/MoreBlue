@@ -21,7 +21,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-            src/app/MoreBlue.vsix
+            src\app\MoreBlue.vsix
 
 
 
