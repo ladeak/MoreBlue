@@ -18,12 +18,6 @@ jobs:
         nuget: 'false'
         sdk: 'false'
         msbuild: 'true'
-    - name: Increment VSIX version
-      id: vsix_version
-      uses: timheuer/vsix-version-stamp@v2
-      with:
-        manifest-file: ${{ env.VsixManifestPath }}
-        vsix-token-source-file: ${{ env.VsixManifestSourcePath }}
     - name: Build
       run: msbuild -restore /p:Configuration=Release /p:OutputPath=app
     - name: Release

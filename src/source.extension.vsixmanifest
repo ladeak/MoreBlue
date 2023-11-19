@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="MoreBlue.8EDBCACB-D615-4A6B-9317-C478567D0DB4" Version="0.0.4" Language="en-US" Publisher="ladeak" />
+        <Identity Id="MoreBlue.8EDBCACB-D615-4A6B-9317-C478567D0DB4" Version="0.0.5" Language="en-US" Publisher="ladeak" />
         <DisplayName>More Blue Theme</DisplayName>
         <Description xml:space="preserve">A more blue theme for VS</Description>
         <License>Resources\LICENSE.txt</License>
